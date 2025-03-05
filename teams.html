@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eurotennis 2025 - Vilamoura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <div class="flex min-h-screen">
+      <!-- Mobile Menu Button -->
+      <button
+        class="fixed top-4 left-4 z-30 p-2 rounded-md bg-teal-600 text-white"
+        onclick="toggleMenu()"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Left Sidebar Navigation -->
+      <nav
+        id="sidebar"
+        class="bg-teal-600 text-white w-64 flex-shrink-0 fixed lg:static -translate-x-full lg:translate-x-0 transition-transform duration-300 z-10 lg:h-auto h-full"
+      >
+        <div class="p-4">
+          <div class="flex items-center mb-8 translate-x-0" id="logo-container">
+            <div class="size-full flex items-center justify-center">
+              <a href="./index.html">
+                <img
+                  src="assets/images/EuroTennis.svg"
+                  alt="Eurotennis Logo"
+                  class="size-full"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <p class="font-semibold">Tournaments</p>
+              <a
+                href="./tournaments.html?t=mens-singles"
+                class="block pl-4 py-2 hover:bg-teal-500"
+                >Men's Singles</a
+              >
+              <a
+                href="./tournaments.html?t=womens-singles"
+                class="block pl-4 py-2 hover:bg-teal-500"
+                >Women's Singles</a
+              >
+              <a
+                href="./tournaments.html?t=mens-doubles"
+                class="block pl-4 py-2 hover:bg-teal-500"
+                >Men's Doubles</a
+              >
+              <a
+                href="./tournaments.html?t=mixed-doubles"
+                class="block pl-4 py-2 hover:bg-teal-500"
+                >Mixed Doubles</a
+              >
+            </div>
+            <a href="./teams.html" class="block py-2 hover:bg-teal-500"
+              >Teams</a
+            >
+            <a href="./orderofplay.html" class="block py-2 hover:bg-teal-500"
+              >Order of Play</a
+            >
+            <a
+              href="/login"
+              class="block py-2 px-4 bg-lime-500 text-white rounded-lg hover:bg-lime-400 mt-8"
+              >Staff Login</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="flex-grow w-full">
+        <!-- Hero Section -->
+        <div
+          class="bg-gradient-to-r from-teal-600 to-lime-500 text-white py-24"
+        >
+          <div class="container mx-auto px-4">
+            <div class="max-w">
+              <h1 class="text-5xl font-bold mb-6">Teams</h1>
+              <p class="text-xl mb-8">
+                There are a total of XX teams from 16 different entities.
+              </p>
+
+              <div class="bg-white text-gray-800 rounded-lg p-6 mb-8">
+
+                <div
+                  class="grid md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6"
+                >
+                  <!-- Team 1 -->
+                  <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-center mb-4">
+                      <img src="./assets/flags/pt.svg" alt="Portugal Flag" class="h-8 w-12 mr-2" />
+                      <h2 class="text-2xl font-bold text-gray-800">Portugal</h2>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Diogo Neves</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Women's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Margarida Araújo</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Joao Martins</span>
+                          <span class="text-gray-600">Luis Cunha</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Mixed Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Teresa Alves</span>
+                          <span class="text-gray-600">Tiago Vieira</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Team 2 -->
+                  <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-center mb-4">
+                      <img src="./assets/flags/it.svg" alt="Italy Flag" class="h-8 w-12 mr-2" />
+                      <h2 class="text-2xl font-bold text-gray-800">Italy</h2>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Luca Antonelli</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Women's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Claudia Napoli</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Federico Guerra</span>
+                          <span class="text-gray-600">Pierlugi Ermacora</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Mixed Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Susanna Cordone</span>
+                          <span class="text-gray-600">Giampiero Guerra</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Team 3 -->
+                  <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-center mb-4">
+                      <img src="./assets/flags/hu.svg" alt="Hungary Flag" class="h-8 w-12 mr-2" />
+                      <h2 class="text-2xl font-bold text-gray-800">Hungary</h2>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Attila Kovács</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Women's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Judit Potoczki</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Ákos Kurai</span>
+                          <span class="text-gray-600">György Papacsek</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Mixed Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Danica Osztoics</span>
+                          <span class="text-gray-600">Csaba Juhász</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Team 4 -->
+                  <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-center mb-4">
+                      <img src="./assets/flags/de.svg" alt="Germany Flag" class="h-8 w-12 mr-2" />
+                      <h2 class="text-2xl font-bold text-gray-800">Germany</h2>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Kerim Tokgür</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Women's Singles</span>
+                        </div>
+                        <div class="ml-2">
+                          <span class="text-gray-600">Leni Hirdes</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-2">
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Men's Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Uwe Becker</span>
+                          <span class="text-gray-600">Tim Bald</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 w-32 flex items-center justify-center">
+                          <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-sm">Mixed Doubles</span>
+                        </div>
+                        <div class="ml-2 flex flex-col">
+                          <span class="text-gray-600">Marleen Seefloth</span>
+                          <span class="text-gray-600">Roger Hofacker</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </main>
+    </div>
+    <script>
+      function toggleMenu() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("-translate-x-full");
+        sidebar.classList.toggle("lg:hidden");
+      }
+
+      let currentSlide = 0;
+      const carousel = document.getElementById("carousel");
+      const slides = carousel.children;
+
+      function showSlide(index) {
+        if (index >= slides.length) currentSlide = 0;
+        if (index < 0) currentSlide = slides.length - 1;
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      function nextSlide() {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+
+      // Auto advance slides
+      setInterval(nextSlide, 5000);
+    </script>
+  </body>
+</html>

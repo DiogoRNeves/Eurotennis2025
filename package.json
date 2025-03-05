@@ -1,0 +1,8 @@
+{
+  "name": "eurotennis-2025-vilamoura",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
