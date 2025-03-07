@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon --inspect-brk app.js",
+    "dev": "nodemon app.js",
+    "debug": "nodemon --inspect=0.0.0.0:9229 app.js",
     "migrate": "node migrate.js up",
     "migrate:down": "node migrate.js down",
     "migrate:redo": "node migrate.js redo",

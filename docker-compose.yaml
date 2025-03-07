@@ -16,7 +16,7 @@ services:
     volumes:
       - .:/app
       - /app/node_modules # Important to exclude node_modules from host.
-    command: npm run dev
+    command: npm run debug
   db:
     image: mysql:8
     environment:
