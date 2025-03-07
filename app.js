@@ -9,18 +9,19 @@ app.set("views", path.join(__dirname, "views"));
 // Import routes
 const indexRouter = require("./routes/index");
 const tournamentsRouter = require("./routes/tournaments");
-const orderOfPlay = require("./routes/orderOfPlay");
-const teams = require("./routes/teams");
+const orderOfPlayRouter = require("./routes/orderOfPlay");
+const teamsRouter = require("./routes/teams");
 
 
 // Serve static files from the public directory
 app.use(express.static("./public"));
 
 // Use routes
+app.use("/", indexRouter);
 app.use("/home", indexRouter);
 app.use("/tournaments", tournamentsRouter);
-app.use("/orderOfPlay", orderOfPlay);
-app.use("/teams", teams);
+app.use("/orderOfPlay", orderOfPlayRouter);
+app.use("/teams", teamsRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {

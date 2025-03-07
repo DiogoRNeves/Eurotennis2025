@@ -1,13 +1,715 @@
-<!-- filepath: /c:/Users/neo16/Downloads/EurotennisTest/EurotennisTest/views/tournaments.ejs -->
-<!DOCTYPE html>
-<html>
-<head>
-  <title><%= title %></title>
-</head>
-<body>
-  <%- include('partials/header') %>
-  <h1>Tournaments</h1>
-  <p>This is the tournaments page.</p>
-  <%- include('partials/footer') %>
-</body>
-</html>
+<%- include('layout', { title, body: `
+  <!-- Tournament Section -->
+  <div
+    class="bg-gradient-to-r from-teal-600 to-lime-500 text-white py-12 tournament-selection"
+  >
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-4">Tournament Details</h1>
+
+      <!-- Tournament Selection -->
+      <div class="grid gap-4 md:grid-cols-2 mb-8">
+        <select id="tournamentSelect" class="p-2 rounded text-gray-800">
+          <option value="">Select Tournament</option>
+          <option value="mens-singles">Men's Singles</option>
+          <option value="womens-singles">Women's Singles</option>
+          <option value="mens-doubles">Men's Doubles</option>
+          <option value="mixed-doubles">Mixed Doubles</option>
+        </select>
+
+        <select id="phaseSelect" class="p-2 rounded text-gray-800">
+          <option value="">Select Phase</option>
+          <option value="group">Group Phase</option>
+          <option value="quarter">Quarter Finals</option>
+          <option value="semi">Semi Finals</option>
+          <option value="final">Final</option>
+        </select>
+
+        <select id="playoffSelect" class="p-2 rounded text-gray-800">
+          <option value="">Select Playoff</option>
+          <option value="1_8">1st to 8th</option>
+          <option value="9_16">9th to 16th</option>
+          <option value="17_24">17th to 24th</option>
+        </select>
+      </div>
+
+      <!-- Elimination Phase -->
+      <div class="bg-white text-gray-800 rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Elimination Phase</h2>
+
+        <!-- Quarter Finals -->
+        <div class="mb-8">
+          <h3 class="font-bold mb-4">Quarter Finals</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <!-- Score -->
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/it.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Antonelli</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >4-2 3-0</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Aparicio</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/es.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/hu.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Kovács</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >5-3 0-2</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Kõrgema</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/ee.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <!-- Score -->
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/it.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Antonelli</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >4-2 3-0</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Aparicio</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/es.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/hu.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Kovács</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >5-3 0-2</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Kõrgema</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/ee.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semi Finals -->
+        <div class="mb-8">
+          <h3 class="font-bold mb-4">Semi Finals</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <!-- Score -->
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/it.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Antonelli</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >4-2 3-0</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Aparicio</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/es.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <!-- Score -->
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/it.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Antonelli</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >4-2 3-0</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Aparicio</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/es.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Finals -->
+        <div>
+          <h3 class="font-bold mb-4">Final</h3>
+
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <!-- Score -->
+            <div
+              class="flex justify-between items-center columns-3 place-content-start"
+            >
+              <div
+                class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+              >
+                <div class="w-6 h-4 row-span-2">
+                  <img
+                    src="./assets/flags/it.svg"
+                    alt="Hungary Flag"
+                    class="object-cover w-full h-full"
+                  />
+                </div>
+                <span class="font-semibold text-left mr-1 row-span-2"
+                  >Antonelli</span
+                >
+              </div>
+
+              <span
+                class="text-sm font-mono text-center place-content-center row-span-2"
+                >4-2 3-0</span
+              >
+
+              <div
+                class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+              >
+                <span class="font-semibold text-right mr-1 row-span-2"
+                  >Aparicio</span
+                >
+                <div class="w-6 h-4 row-span-2">
+                  <img
+                    src="./assets/flags/es.svg"
+                    alt="Hungary Flag"
+                    class="object-cover w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group Phase -->
+      <div class="bg-white text-gray-800 rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold mb-6">Group Phase</h2>
+        <!-- Group Standings -->
+        <div class="mb-8">
+          <h3 class="font-bold mb-4">Standings Group A</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-gray-50 rounded-lg">
+              <thead>
+                <tr class="border-b">
+                  <th class="px-4 py-2 text-left">Position</th>
+                  <th class="px-4 py-2 text-left">Player</th>
+                  <th class="px-4 py-2 text-center">Points</th>
+                  <th class="px-4 py-2 text-center">Won</th>
+                  <th class="px-4 py-2 text-center">Lost</th>
+                  <th class="px-4 py-2 text-center">Sets Won</th>
+                  <th class="px-4 py-2 text-center">Sets Lost</th>
+                  <th class="px-4 py-2 text-center">Sets Diference</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="px-4 py-2">1</td>
+                  <td class="px-4 py-2"><div
+                    class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                  >
+                    <div class="w-6 h-4 row-span-2">
+                      <img
+                        src="./assets/flags/it.svg"
+                        alt="Hungary Flag"
+                        class="object-cover w-full h-full"
+                      />
+                    </div>
+                    <span class="font-semibold text-left mr-1 row-span-2"
+                      >Luca Antonelli</span
+                    >
+                  </div></td>
+                  <td class="px-4 py-2 text-center">2</td>
+                  <td class="px-4 py-2 text-center">2</td>
+                  <td class="px-4 py-2 text-center">0</td>
+                  <td class="px-4 py-2 text-center">6</td>
+                  <td class="px-4 py-2 text-center">6</td>
+                  <td class="px-4 py-2 text-center">6</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2">2</td>
+                  <td class="px-4 py-2"><div
+                    class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                  >
+                    <div class="w-6 h-4 row-span-2">
+                      <img
+                        src="./assets/flags/es.svg"
+                        alt="Hungary Flag"
+                        class="object-cover w-full h-full"
+                      />
+                    </div>
+                    <span class="font-semibold text-left mr-1 row-span-2"
+                      >Carlos Aparicio</span
+                    >
+                  </div></td>
+                  <td class="px-4 py-2 text-center">2</td>
+                  <td class="px-4 py-2 text-center">1</td>
+                  <td class="px-4 py-2 text-center">1</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2">3</td>
+                  <td class="px-4 py-2"><div
+                    class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                  >
+                    <div class="w-6 h-4 row-span-2">
+                      <img
+                        src="./assets/flags/hu.svg"
+                        alt="Hungary Flag"
+                        class="object-cover w-full h-full"
+                      />
+                    </div>
+                    <span class="font-semibold text-left mr-1 row-span-2"
+                      >Attila Kovács</span
+                    >
+                  </div></td>
+                  <td class="px-4 py-2 text-center">2</td>
+                  <td class="px-4 py-2 text-center">1</td>
+                  <td class="px-4 py-2 text-center">1</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-2">4</td>
+                  <td class="px-4 py-2"><div
+                    class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                  >
+                    <div class="w-6 h-4 row-span-2">
+                      <img
+                        src="./assets/flags/ee.svg"
+                        alt="Hungary Flag"
+                        class="object-cover w-full h-full"
+                      />
+                    </div>
+                    <span class="font-semibold text-left mr-1 row-span-2"
+                      >Erkko Kõrgema</span
+                    >
+                  </div></td>
+                  <td class="px-4 py-2 text-center">2</td>
+                  <td class="px-4 py-2 text-center">0</td>
+                  <td class="px-4 py-2 text-center">2</td>
+                  <td class="px-4 py-2 text-center">0</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                  <td class="px-4 py-2 text-center">3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="font-bold mb-4">Matches</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <!-- Score -->
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/it.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Antonelli</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >4-2 3-0</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Aparicio</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/es.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/hu.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Kovács</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >5-3 0-2</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Kõrgema</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/ee.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <!-- Score -->
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/it.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Antonelli</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >4-2 3-0</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Aparicio</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/es.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/hu.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Kovács</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >5-3 0-2</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Kõrgema</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/ee.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <!-- Score -->
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/it.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Antonelli</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >4-2 3-0</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Aparicio</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/es.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div
+                class="flex justify-between items-center columns-3 place-content-start"
+              >
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/hu.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                  <span class="font-semibold text-left mr-1 row-span-2"
+                    >Kovács</span
+                  >
+                </div>
+
+                <span
+                  class="text-sm font-mono text-center place-content-center row-span-2"
+                  >5-3 0-2</span
+                >
+
+                <div
+                  class="flex items-center grid grid-flow-col grid-rows-2 gap-x-2"
+                >
+                  <span class="font-semibold text-right mr-1 row-span-2"
+                    >Kõrgema</span
+                  >
+                  <div class="w-6 h-4 row-span-2">
+                    <img
+                      src="./assets/flags/ee.svg"
+                      alt="Hungary Flag"
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+` }) %>
