@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Men's Singles",
+    "type": "singles",
+    "maxPlayers": 16,
+    "numberOfGroups": 4
+  },
+  {
+    "name": "Women's Singles",
+    "type": "singles",
+    "maxPlayers": 16,
+    "numberOfGroups": 4
+  },
+  {
+    "name": "Men's Doubles",
+    "type": "doubles",
+    "maxPlayers": 24,
+    "numberOfGroups": 8
+  },
+  {
+    "name": "Mixed Doubles",
+    "type": "doubles",
+    "maxPlayers": 24,
+    "numberOfGroups": 8
+  }
+]

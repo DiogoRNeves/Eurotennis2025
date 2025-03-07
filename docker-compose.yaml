@@ -7,7 +7,7 @@ services:
       - "3000:3000"
       - "9229:9229" # Debug port
     depends_on:
-      - migrate
+      - db
     environment:
       DATABASE_HOST: db
       DATABASE_USER: root
@@ -35,18 +35,6 @@ services:
       MYSQL_ROOT_PASSWORD: your_mysql_password
     depends_on:
       - db
-
-  migrate:
-    build:
-      context: .
-      dockerfile: Dockerfile.migrate
-    depends_on:
-      - db
-    environment:
-      DATABASE_HOST: db
-      DATABASE_USER: root
-      DATABASE_PASSWORD: your_mysql_password
-      DATABASE_NAME: eurotennis
 
 volumes:
   mysql-data:

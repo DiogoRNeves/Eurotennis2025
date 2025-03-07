@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Diogo Neves",
+    "team": "Portugal",
+    "tournament": "Men's Singles"
+  },
+  {
+    "name": "Catarina Silva",
+    "team": "Portugal",
+    "tournament": "Women's Singles"
+  },
+  {
+    "name": "Tiago Sá",
+    "team": "Portugal",
+    "tournament": "Men's Doubles"
+  },
+  {
+    "name": "Rui Gomes",
+    "team": "Portugal",
+    "tournament": "Men's Doubles"
+  },
+  {
+    "name": "Teresa Alves",
+    "team": "Portugal",
+    "tournament": "Mixed Doubles"
+  },
+  {
+    "name": "Tiago Vieira",
+    "team": "Portugal",
+    "tournament": "Mixed Doubles"
+  },
+  {
+    "name": "Erkko Kõrgema",
+    "team": "Estonia",
+    "tournament": "Men's Singles"
+  },
+  {
+    "name": "Marit Priisalu",
+    "team": "Estonia",
+    "tournament": "Women's Singles"
+  },
+  {
+    "name": "Villu Känd",
+    "team": "Estonia",
+    "tournament": "Men's Doubles"
+  },
+  {
+    "name": "Oliver Tamm",
+    "team": "Estonia",
+    "tournament": "Men's Doubles"
+  },
+  {
+    "name": "Kadri Kukk",
+    "team": "Estonia",
+    "tournament": "Mixed Doubles"
+  },
+  {
+    "name": "Reet Reedik",
+    "team": "Estonia",
+    "tournament": "Mixed Doubles"
+  }
+]
