@@ -17,6 +17,7 @@ services:
       - .:/app
       - /app/node_modules # Important to exclude node_modules from host.
     command: npm run debug
+
   db:
     image: mysql:8
     environment:
@@ -24,6 +25,17 @@ services:
       MYSQL_DATABASE: eurotennis
     volumes:
       - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: your_mysql_password
+    depends_on:
+      - db
+
   migrate:
     build:
       context: .
