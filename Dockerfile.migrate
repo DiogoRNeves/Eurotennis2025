@@ -1,0 +1,12 @@
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY sequelize.js ./
+COPY umzug.js ./
+COPY migrations ./migrations
+
+RUN npm install sequelize mysql2 umzug
+
+CMD ["node", "migrate.js", "up"]

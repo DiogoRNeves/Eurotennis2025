@@ -1,8 +1,24 @@
 {
-  "name": "eurotennis-2025-vilamoura",
-  "private": true,
-  "version": "0.0.0",
-  "dependencies": {
-    "express": "^4.21.2"
-  }
+  "name": "eurotennis2025",
+  "version": "1.0.0",
+  "description": "Website for Eurotennis event",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon --inspect-brk app.js",
+    "migrate": "node migrate.js up",
+    "migrate:down": "node migrate.js down",
+    "migrate:redo": "node migrate.js redo",
+    "migrate:create": "node migrate.js create"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiogoRNeves/Eurotennis2025.git"
+  },
+  "author": "Diogo Neves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiogoRNeves/Eurotennis2025/issues"
+  },
+  "homepage": "https://github.com/DiogoRNeves/Eurotennis2025#readme"
 }
