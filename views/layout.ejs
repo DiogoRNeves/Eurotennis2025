@@ -84,7 +84,12 @@
 
       <!-- Main Content -->
       <main class="flex-grow w-full">
-        <%- body %>
+        <!-- Hero Section -->
+        <div
+          class="bg-gradient-to-r from-teal-600 to-lime-500 text-white py-24"
+        >
+          <%- body %>
+        </div>
       </main>
     </div>
     <script>
@@ -94,8 +99,6 @@
         sidebar.classList.toggle("lg:hidden");
       }
     </script>
-    <% if (typeof extraTags !== 'undefined') { %>
-      <%- extraTags %>
-    <% } %>
+    <% if (typeof extraTags !== 'undefined') { %> <%- extraTags %> <% } %>
   </body>
 </html>

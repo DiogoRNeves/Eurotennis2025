@@ -2,24 +2,28 @@
   {
     "name": "Men's Singles",
     "type": "singles",
+    "acronym": "MS",
     "maxPlayers": 16,
     "numberOfGroups": 4
   },
   {
     "name": "Women's Singles",
     "type": "singles",
+    "acronym": "WS",
     "maxPlayers": 16,
     "numberOfGroups": 4
   },
   {
     "name": "Men's Doubles",
     "type": "doubles",
+    "acronym": "MD",
     "maxPlayers": 24,
     "numberOfGroups": 8
   },
   {
     "name": "Mixed Doubles",
     "type": "doubles",
+    "acronym": "MxD",
     "maxPlayers": 24,
     "numberOfGroups": 8
   }

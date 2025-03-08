@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.ENUM("singles", "doubles"),
         allowNull: false,
       },
+      acronym: {
+        type: DataTypes.ENUM("MS", "WS", "MD", "MxD"),
+        allowNull: false,
+      },
       maxPlayers: {
         type: DataTypes.INTEGER,
         allowNull: false,

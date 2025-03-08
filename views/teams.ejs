@@ -1,2 +1,10 @@
-<%- include('layout', { title: 'Teams', body: include('partials/_teamsContent',
-{ teamCount }) }) %>
+<%- include(
+  'layout',
+  {
+    title: 'Teams',
+    body: include(
+      'partials/_teamsContent',
+      { teamsDetails }
+    )
+  }
+) %>
