@@ -4,27 +4,35 @@
     "type": "singles",
     "acronym": "MS",
     "maxPlayers": 16,
-    "numberOfGroups": 4
+    "numberOfGroups": 4,
+    "displayOrder": 1,
+    "badgeColor": "blue"
   },
   {
     "name": "Women's Singles",
     "type": "singles",
     "acronym": "WS",
     "maxPlayers": 16,
-    "numberOfGroups": 4
+    "numberOfGroups": 4,
+    "displayOrder": 2,
+    "badgeColor": "pink"
   },
   {
     "name": "Men's Doubles",
     "type": "doubles",
     "acronym": "MD",
     "maxPlayers": 24,
-    "numberOfGroups": 8
+    "numberOfGroups": 8,
+    "displayOrder": 3,
+    "badgeColor": "teal"
   },
   {
     "name": "Mixed Doubles",
     "type": "doubles",
     "acronym": "MxD",
     "maxPlayers": 24,
-    "numberOfGroups": 8
+    "numberOfGroups": 8,
+    "displayOrder": 4,
+    "badgeColor": "orange"
   }
 ]

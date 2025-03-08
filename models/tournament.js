@@ -25,6 +25,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      displayOrder: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      badgeColor: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      }
     });
 
     Tournament.associate = (models) => {

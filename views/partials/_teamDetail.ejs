@@ -1,0 +1,16 @@
+<div class="mb-2">
+  <div class="flex">
+    <div class="flex-shrink-0 w-32 flex items-center justify-center">
+      <span
+        class="bg-<%= badgeColor %>-100 text-<%= badgeColor %>-800 text-xs font-medium px-2.5 py-0.5 rounded-sm"
+        ><%= tournament %></span
+      >
+    </div>
+    <div class="ml-2 flex flex-col">
+      <!-- if it gets weird for singles, remove flex and flex-col on that case -->
+      <% for( let i = 0; i < names.length; i++ ) { %>
+      <span class="text-gray-600"><%= names[i] %></span>
+      <% } %>
+    </div>
+  </div>
+</div>

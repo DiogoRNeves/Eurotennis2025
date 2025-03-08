@@ -1,4 +1,28 @@
 [
-  { "name": "Portugal", "flag": "pt.svg" },
-  { "name": "Estonia", "flag": "ee.svg" }
+  { "name": "Italy 1", "flag": "it.svg" },
+
+  { "name": "Italy 2", "flag": "it.svg" },
+
+  { "name": "France", "flag": "fr.svg" },
+  { "name": "Luxembourg", "flag": "lu.svg" },
+  { "name": "Hungary", "flag": "hu.svg" },
+  { "name": "Romania", "flag": "ro.svg" },
+  { "name": "Germany", "flag": "de.svg" },
+  { "name": "Belgium", "flag": "be.svg" },
+  { "name": "Estonia 1", "flag": "ee.svg" },
+  { "name": "Estonia 2", "flag": "ee.svg" },
+  { "name": "CzechRepublic", "flag": "cz.svg" },
+  { "name": "EIB 1", "flag": "eu.svg" },
+  { "name": "EIB 2", "flag": "eu.svg" },
+  { "name": "Portugal 1", "flag": "pt.svg" },
+  { "name": "Portugal 2", "flag": "pt.svg" },
+  { "name": "England 1", "flag": "gb-eng.svg" },
+  { "name": "BIS 1", "flag": "bis.svg" },
+  { "name": "BIS 2", "flag": "bis.svg" },
+  { "name": "England 2", "flag": "gb-eng.svg" },
+  { "name": "Spain 1", "flag": "es.svg" },
+  { "name": "Spain 2", "flag": "es.svg" },
+  { "name": "ECB", "flag": "ecb.svg" },
+  { "name": "Switzerland 1", "flag": "ch.svg" },
+  { "name": "Switzerland 2", "flag": "ch.svg" }
 ]

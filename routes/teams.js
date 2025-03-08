@@ -6,47 +6,18 @@ const db = require("../models");
 // Serve teams.ejs for the teams route
 router.get("/", async (req, res) => {
   try {
-    const teamsDbData = await db.Team.findAll({
-      include: [
-        {
-          model: db.TournamentParticipant,
-          include: [
-            {
-              model: db.Player,
-            },
-            {
-              model: db.Tournament,
-            },
-          ],
-        },
-      ],
-    });
-    const teamsDetails = teamsDbData.map((team) => {
-      const details = {
-        flag: team.flag,
-        name: team.name,
-        players: {},
-      };
+    const teamsDetails = await db.getTeamsDetails();
+    // Sort teams by name
+    teamsDetails.sort((a, b) => a.name.localeCompare(b.name));
+    const tournamentAcronymsDb = await db.Tournament.findAll({
+      attributes: ["acronym"],
+      order: [["displayOrder", "ASC"]],
+    })
+    const tournamentAcronyms = tournamentAcronymsDb.map((tournament) => tournament.acronym);
 
-      team.TournamentParticipants.forEach((participant) => {
-        const tournamentName = participant.Tournament.name;
-        const touranmentAcronyn = participant.Tournament.acronym;
-        const playerName = participant.Player.name;
-        if (!details.players[touranmentAcronyn]) {
-          details.players[touranmentAcronyn] = {
-            tournament: tournamentName,
-            names: [],
-          };
-        }
-        details.players[touranmentAcronyn].names.push(playerName);
-      });
-
-      return details;
-    });
-
-    res.render("teams", { title: "Teams", teamsDetails });
+    res.render("teams", { title: "Teams", teamsDetails, tournamentAcronyms });
   } catch (error) {
-    console.error("Error fetching team count:", error);
+    console.error("Error fetching teams:", error);
     res.status(500).send("Internal Server Error");
   }
 });
