@@ -4,13 +4,11 @@
   "description": "Website for Eurotennis event",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "debug": "nodemon --inspect=0.0.0.0:9229 app.js",
-    "migrate": "node migrate.js up",
-    "migrate:down": "node migrate.js down",
-    "migrate:redo": "node migrate.js redo",
-    "migrate:create": "node migrate.js create"
+    "build": "tsc",
+    "start": "npm run build && node dist/app.js",
+    "dev": "nodemon --ext ts --watch ./ --exec ts-node app.ts",
+    "debug": "nodemon --inspect=0.0.0.0:9229 --watch './**/*.ts' --exec ts-node app.ts",
+    "seed": "ts-node seed.ts"
   },
   "repository": {
     "type": "git",
@@ -23,9 +21,19 @@
   },
   "homepage": "https://github.com/DiogoRNeves/Eurotennis2025#readme",
   "dependencies": {
+    "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "mysql2": "^3.13.0",
-    "sequelize": "^6.37.6"
+    "mysql2": "^3.14.3",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   }
 }

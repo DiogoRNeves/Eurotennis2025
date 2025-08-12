@@ -1,28 +1,16 @@
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-      - "9229:9229" # Debug port
-    depends_on:
-      - db
-    environment:
-      DATABASE_HOST: db
-      DATABASE_USER: root
-      DATABASE_PASSWORD: your_mysql_password
-      DATABASE_NAME: eurotennis
-    volumes:
-      - .:/app
-      - /app/node_modules # Important to exclude node_modules from host.
-    command: npm run debug
+
 
   db:
     image: mysql:8
     environment:
       MYSQL_ROOT_PASSWORD: your_mysql_password
       MYSQL_DATABASE: eurotennis
+      MYSQL_ROOT_HOST: '%'
+      # This line ensures the root user uses mysql_native_password
+      MYSQL_ROOT_PASSWORD_PLUGIN: mysql_native_password
+    ports:
+      - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
 

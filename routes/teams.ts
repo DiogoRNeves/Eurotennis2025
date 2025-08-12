@@ -1,15 +1,16 @@
 // filepath: /c:/Users/neo16/Downloads/EurotennisTest/EurotennisTest/routes/teams.js
-const express = require("express");
-const router = express.Router();
-const db = require("../models");
+import { Router, Request, Response } from "express";
+import { getTeamsDetails, Tournament } from "../models";
+
+const router = Router();
 
 // Serve teams.ejs for the teams route
-router.get("/", async (req, res) => {
+router.get("/", async (req: Request, res: Response) => {
   try {
-    const teamsDetails = await db.getTeamsDetails();
+    const teamsDetails = await getTeamsDetails();
     // Sort teams by name
     teamsDetails.sort((a, b) => a.name.localeCompare(b.name));
-    const tournamentAcronymsDb = await db.Tournament.findAll({
+    const tournamentAcronymsDb = await Tournament.findAll({
       attributes: ["acronym"],
       order: [["displayOrder", "ASC"]],
     })
@@ -22,4 +23,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
