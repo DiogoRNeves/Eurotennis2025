@@ -5,13 +5,16 @@ import { Team } from "./team";
 import { Tournament } from "./tournament";
 import { TournamentParticipant } from "./tournamentParticipant";
 
+import { settings } from '../settings';
+
 // Initialize Sequelize
 export const sequelize = new Sequelize(
-  process.env.DATABASE_NAME as string,
-  process.env.DATABASE_USER as string,
-  process.env.DATABASE_PASSWORD as string,
+  settings.databaseName,
+  settings.databaseUser,
+  settings.databasePassword,
   {
-    host: process.env.DATABASE_HOST,
+    host: settings.databaseUrl,
+    port: settings.databasePort,
     dialect: "mysql",
     logging: false,
     models: [Player, Team, Tournament, TournamentParticipant],
@@ -82,9 +85,3 @@ export async function getTeamsDetails(teamIds?: number[]) {
 
   return teamsDetails;
 }
-
-type PlayerDetails = {
-  tournament: string;
-  names: string[];
-  badgeColor?: string;
-};

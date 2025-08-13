@@ -1,11 +1,7 @@
 import express from "express";
 import path from "path";
-import dotenv from "dotenv";
 
-// Load environment variables from .env file
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config();
-}
+import { settings } from './settings';
 
 import { sequelize } from "./models";
 import { seedDatabase } from "./seed";
@@ -32,7 +28,7 @@ app.use("/tournaments", tournamentsRouter);
 app.use("/orderOfPlay", orderOfPlayRouter);
 app.use("/teams", teamsRouter);
 
-const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+const PORT = settings.appPort || 3000;
 
 // Sync models with the database without dropping tables
 sequelize.sync({ alter: true }).then(async () => {
